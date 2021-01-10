@@ -1,10 +1,10 @@
 :root {
-  --mainText: #04e0e0;
+  /* --mainText: #04e0e0; */
   --secondaryText: #c3c3c3;
 
   --borderColor: #02a164;
 
-  --mainColor: #000;
+  /* --mainColor: #000; */
   --secondaryColor: #fff;
 
   --themeDotBorder: #242942;
@@ -39,7 +39,7 @@ h4,
 h5,
 h6,
 strong {
-  color: var(--mainText);
+  color: mainText;
   font-weight: 500;
 }
 
