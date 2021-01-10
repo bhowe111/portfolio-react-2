@@ -1,34 +1,49 @@
 import React from "react";
-// import "../styles/main.css";
+import Toggle from "../config/Toggle";
+import { whiteTheme, goldTheme } from "../styles/theme";
+import { useGoldMode } from "../useGoldMode";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "../styles/global";
 
 export default function Header() {
-  return (
-    <div className="nav-wrapper">
-      <p className="change-theme">Change Theme</p>
-      <ul className="navigation">
-        <li data-mode="light" id="light-mode" className="theme-dot"></li>
-        <li data-mode="gold" id="gold-mode" className="theme-dot"></li>
-      </ul>
+  const [theme, toggleTheme, componentMounted] = useGoldMode();
+  const themeMode = theme === "white" ? whiteTheme : goldTheme;
 
-      <ul className="navigation">
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/brendan-howe/">
-            <i className="fab fa-linkedin-in"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/bhowe111">
-            <i className="fab fa-github"></i>
-          </a>
-        </li>
-      </ul>
-      <h4 className="test">Testing things</h4>
-    </div>
+  if (!componentMounted) {
+    return <div />;
+  }
+
+  return (
+    <ThemeProvider theme={theme === "white" ? whiteTheme : goldTheme}>
+      <GlobalStyles />
+
+      <div className="nav-wrapper">
+        <p className="change-theme">Change Theme</p>
+        <ul className="navigation">
+          <li>
+            <Toggle theme={theme} toggleTheme={toggleTheme} />
+          </li>
+        </ul>
+
+        <ul className="navigation">
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/brendan-howe/">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/bhowe111">
+              <i className="fab fa-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </ThemeProvider>
   );
 }
