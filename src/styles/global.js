@@ -24,4 +24,6 @@ export const GlobalStyles = createGlobalStyle`
   button:focus {
     outline: none;
     
-  }`;
+  }
+
+`;

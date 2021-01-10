@@ -5,6 +5,9 @@ import { whiteTheme, goldTheme } from "./styles/theme";
 import { GlobalStyles } from "./styles/global";
 import Toggle from "./config/Toggle";
 
+import Header from "./components/Header";
+import Landing from "./pages/Landing";
+
 function App() {
   const [theme, toggleTheme, componentMounted] = useGoldMode();
   const themeMode = theme === "white" ? whiteTheme : goldTheme;
@@ -18,8 +21,10 @@ function App() {
       <ThemeProvider theme={theme === "white" ? whiteTheme : goldTheme}>
         <>
           <GlobalStyles />
+          <Header />
           <Toggle theme={theme} toggleTheme={toggleTheme} />
           <h1>it is a {theme === "white" ? "white theme" : "gold theme"}</h1>
+          <Landing />
         </>
       </ThemeProvider>
     </div>
