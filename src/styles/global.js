@@ -343,7 +343,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 .change-theme {
-  color: var(--mainText);
+  color: ${({ theme }) => theme.mainText};
 }
 
 /* ----------------------------- Themes */

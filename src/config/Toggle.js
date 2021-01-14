@@ -9,8 +9,7 @@ import { ReactComponent as SunIcon } from "../images/svg/sun.svg";
 // Toggle Container
 const ToggleContainer = styled.button`
   background: ${({ theme }) => theme.gradient};
-  border: 2px solid ${({ theme }) => theme.toggleBorder};
-  border-radius: 30px;
+  border: 1px solid ${({ theme }) => theme.toggleBorder};
   cursor: pointer;
   display: flex;
   font-size: 0.5rem;
@@ -19,13 +18,13 @@ const ToggleContainer = styled.button`
   overflow: hidden;
   padding: 0.5rem;
   position: relative;
-  width: 8rem;
+  width: 6rem;
   height: 4rem;
 
   svg {
     height: auto;
     width: 2.5rem;
-    transition: all 0.3s linear;
+    transition: all 0.5s ease-in-out;
 
     &:first-child {
       transform: ${({ whiteTheme }) =>

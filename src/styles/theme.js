@@ -2,8 +2,8 @@ import whiteBkgImage from "../images/ams-bkg-blur-color-grit.jpg";
 import goldBkgImage from "../images/ams-bkg-blur-dark-hatch.png";
 
 export const whiteTheme = {
-  toggleBorder: "slateblue",
-  gradient: "linear-gradient(#39598a, #79d7ed)",
+  toggleBorder: "#04e0e0",
+  gradient: "linear-gradient(#04e0e0, #c3c3c3)",
   mainText: "#04e0e0",
   secondaryText: "#c3c3c3",
   backgroundImage: `url(${whiteBkgImage})`,
@@ -14,8 +14,8 @@ export const whiteTheme = {
 };
 
 export const goldTheme = {
-  toggleBorder: "gold",
-  gradient: "linear-gradient(#091236, #1e215d)",
+  toggleBorder: "#ffd700",
+  gradient: "linear-gradient(#ffd700, #161616)",
   mainText: "#ffd700",
   secondaryText: "#fff",
   backgroundImage: `url(${goldBkgImage})`,
