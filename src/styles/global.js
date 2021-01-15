@@ -346,6 +346,7 @@ export const GlobalStyles = createGlobalStyle`
   color: ${({ theme }) => theme.mainText};
 }
 
+
 /* ----------------------------- Themes */
 
 #theme-options-wrapper {

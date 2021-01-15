@@ -2,10 +2,6 @@ import React from "react";
 import { func, string } from "prop-types";
 import styled from "styled-components";
 
-// svgs from flaticon.com
-import { ReactComponent as MoonIcon } from "../images/svg/moon.svg";
-import { ReactComponent as SunIcon } from "../images/svg/sun.svg";
-
 // Toggle Container
 const ToggleContainer = styled.button`
   background: ${({ theme }) => theme.gradient};
@@ -18,24 +14,22 @@ const ToggleContainer = styled.button`
   overflow: hidden;
   padding: 0.5rem;
   position: relative;
-  width: 6rem;
-  height: 4rem;
+  width: 4em;
+  height: 2rem;
+  border-radius: 2em;
+  transition: all ease .3s;
 
-  svg {
-    height: auto;
-    width: 2.5rem;
-    transition: all 0.5s ease-in-out;
-
-    &:first-child {
-      transform: ${({ whiteTheme }) =>
-        whiteTheme ? "translateY(0)" : "translateY(100px)"};
+    &:after, &:before {
+      position: relative;
+      display: block;
+      content: "";
+      with: 50%;
+      height: 100%;
+      transition: all .3s ease;
     }
 
-    &:nth-child(2) {
-      transform: ${({ whiteTheme }) =>
-        whiteTheme ? "translateY(-100px)" : "translateY(0)"};
-    }
   }
+  
 `;
 
 // end Toggle Container
@@ -43,10 +37,10 @@ const ToggleContainer = styled.button`
 const Toggle = ({ theme, toggleTheme }) => {
   const isWhite = theme === "white";
   return (
-    <ToggleContainer whiteTheme={isWhite} onClick={toggleTheme}>
-      <SunIcon />
-      <MoonIcon />
-    </ToggleContainer>
+    <ToggleContainer
+      whiteTheme={isWhite}
+      onClick={toggleTheme}
+    ></ToggleContainer>
   );
 };
 

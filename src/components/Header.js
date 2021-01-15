@@ -18,7 +18,9 @@ export default function Header() {
       <GlobalStyles />
 
       <div className="nav-wrapper">
-        <p className="change-theme">Change Theme</p>
+        <p className="change-theme">
+          <small>Change Theme</small>
+        </p>
         <ul className="navigation">
           <li>
             <Toggle theme={theme} toggleTheme={toggleTheme} />
