@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 // Toggle Container
 const ToggleContainer = styled.button`
-  background: ${({ theme }) => theme.gradient};
+  background: ${({ theme }) => theme.mainText};
   border: 1px solid ${({ theme }) => theme.toggleBorder};
   cursor: pointer;
   display: flex;
